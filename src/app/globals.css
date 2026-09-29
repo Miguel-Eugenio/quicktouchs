@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #07080b;
+  --bg-secondary: #0d1017;
+  --surface-deep: #121620;
+  --surface-elevated: #1a202c;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  --accent-copper: #e28743;
+  --accent-copper-glow: rgba(226, 135, 67, 0.25);
+  --accent-sapphire: #3b82f6;
+  --text-primary: #f3f6fa;
+  --text-secondary: #9aa5b6;
+  --text-muted: #5e6878;
+}
+
+@theme inline {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-surface-deep: var(--surface-deep);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border-subtle: var(--border-subtle);
+  --color-accent-copper: var(--accent-copper);
+  --color-accent-sapphire: var(--accent-sapphire);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #07080b;
+  color: #f3f6fa;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #07080b;
+  color: #f3f6fa;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  selection-background-color: #e28743;
+  selection-color: #ffffff;
+}
+
+/* Custom titanium brushed effect & subtle glows */
+.titanium-texture {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%),
+              radial-gradient(ellipse at 50% 0%, rgba(226, 135, 67, 0.08) 0%, transparent 60%);
+}
+
+.copper-border-glow {
+  box-shadow: 0 0 25px -5px rgba(226, 135, 67, 0.2);
+}
+
+.lens-reflection {
+  background: radial-gradient(circle at 35% 35%, rgba(138, 92, 246, 0.3) 0%, rgba(59, 130, 246, 0.2) 30%, transparent 70%);
+}
+
+/* Precision knurling pattern */
+.knurl-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 0);
+  background-size: 6px 6px;
+}
+
+/* Grid technical backdrop */
+.tech-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Oscilloscope animation */
+@keyframes wavePulse {
+  0% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+  100% { transform: scaleY(0.4); }
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07080b;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e232b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e28743;
+}
